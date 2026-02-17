@@ -2,80 +2,42 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nafida Biz - منصة التسيير الرقمي</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <title>Nafida Biz - Prototype</title>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
-
     <div id="loginPage">
         <div class="login-box">
             <h1>Nafida Biz</h1>
             <p>منصة المؤسسات الناشئة</p>
-            <hr>
-            <div class="form-group">
-                <label>البريد الإلكتروني للشركة</label>
-                <input type="email" id="userEmail" placeholder="admin@startup.dz" value="contact@riyad-biz.dz">
-                <label>كلمة المرور</label>
-                <input type="password" placeholder="••••••••" value="123456">
-                <button class="btn-primary" onclick="showDashboard()">دخول إلى المنصة</button>
-            </div>
+            <button class="btn-primary" onclick="showDashboard()">دخول للمنصة</button>
         </div>
     </div>
 
     <div id="dashboardPage" style="display: none;">
         <div class="sidebar">
             <h2>نافذة بيز</h2>
-            <p>شركة رياض وصلاح الدين</p>
             <ul>
-                <li>🏠 الرئيسية</li>
-                <li>📄 ضرائب G50</li>
-                <li>👥 العمال CNAS</li>
-                <li onclick="location.reload()">🚪 تسجيل الخروج</li>
+                <li onclick="location.reload()">الرئيسية</li>
+                <li>ضرائب G50</li>
             </ul>
         </div>
-
         <div class="main-content">
-            <div class="stats">
-                <div class="stat-card"><h5>رقم الأعمال</h5><p>2,450,000 دج</p></div>
-                <div class="stat-card"><h5>الضريبة المستحقة</h5><p>46,550 دج</p></div>
-                <div class="stat-card"><h5>الحالة</h5><p style="color: green;">منضبط</p></div>
-            </div>
-
             <div class="card">
-                <h3>أتمتة الضرائب (بدون محاسب)</h3>
-                <p>قام النظام بحساب التزاماتك الجبائية والاجتماعية تلقائياً.</p>
-                <button class="btn-pay" onclick="openPayment()">دفع ضريبة G50 الآن</button>
-            </div>
-
-            <div class="card">
-                <h3>آخر العمليات</h3>
-                <table id="historyTable">
-                    <thead>
-                        <tr><th>التاريخ</th><th>النوع</th><th>المبلغ</th><th>الحالة</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>2026/01/15</td><td>اشتراك CNAS</td><td>14,200 دج</td><td class="status-ok">تم الدفع ✅</td></tr>
-                    </tbody>
-                </table>
+                <h3>حساب ضريبة G50</h3>
+                <p>المبلغ المطلوب: 46,550 دج</p>
+                <button class="btn-pay" onclick="openPayment()">دفع الآن</button>
             </div>
         </div>
     </div>
 
-    <div id="paymentModal">
+    <div id="paymentModal" style="display: none;">
         <div class="modal-content">
-            <h3>بوابة الدفع الإلكتروني</h3>
-            <div class="amount-tag">المبلغ: 46,550.00 دج</div>
-            <input type="text" placeholder="رقم البطاقة الذهبية">
-            <div style="display: flex; gap: 10px;">
-                <input type="text" placeholder="MM/YY">
-                <input type="password" placeholder="CVV2">
-            </div>
-            <button class="btn-confirm" onclick="processPayment()">تأكيد الدفع</button>
-            <button class="btn-cancel" onclick="closePayment()">إلغاء</button>
+            <h3>بوابة الدفع</h3>
+            <input type="text" placeholder="رقم البطاقة">
+            <button onclick="processPayment()">تأكيد</button>
+            <button onclick="closePayment()">إلغاء</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
-</body>
+    <script src="script.js"></script> </body>
 </html>
