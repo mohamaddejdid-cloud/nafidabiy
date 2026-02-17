@@ -12,21 +12,9 @@ function closePayment() {
 }
 
 function processPayment() {
-    alert("جاري الاتصال بخوادم بريد الجزائر...");
-    
+    alert("جاري الاتصال ببريد الجزائر...");
     setTimeout(() => {
-        alert("تمت العملية بنجاح! تم استخراج وصل G50 رقم #2026-001");
+        alert("تم الدفع بنجاح!");
         closePayment();
-        
-        // إضافة السطر الجديد للجدول
-        const table = document.getElementById('historyTable').getElementsByTagName('tbody')[0];
-        const newRow = table.insertRow(0);
-        newRow.innerHTML = `
-            <td>2026/02/17</td>
-            <td>دفع G50 آلي</td>
-            <td>46,550 دج</td>
-            <td class="status-ok">تم الدفع ✅</td>
-        `;
     }, 2000);
 }
-
